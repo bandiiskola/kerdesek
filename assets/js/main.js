@@ -90,9 +90,10 @@ var kerdesek=() =>
    s+="<h1>"+kerdesek[index].k+"</h1><br>"
    s+='<input type="valaszok" id="k1" name="valasz" value="1"><label for="k1">'+kerdesek[index].v1+'</label><br><input type="valaszok" id="k2" name="valasz" value="2"><label for="k2">'+kerdesek[index].v2+'</label><br><input type="valaszok" id="k3" name="valasz" value="3"><label for="k3">'+kerdesek[index].v3+'</label><input type="valaszok" id="k4" name="valasz" value="4"><label for="k4">'+kerdesek[index].v4+'</label>'
    if(index>=kerdesek.length)
-    {
-        index++
-    }
+        {
+            index++
+        }
+    document.getElementById("kerdesek").innerHTML=s
 }
 
 var betoltes=() =>
