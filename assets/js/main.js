@@ -1,5 +1,4 @@
-kerdesek = [
-    {
+kerdes = [{
         k: "Honnan származik a Toblerone csoki?",
         v1: "Amerika",
         v2: "Svájc",
@@ -58,7 +57,7 @@ kerdesek = [
     {
         k: "A hiedelem szerint hány élete van a macskáknak?",
         v1: "3",
-        v2: "5", 
+        v2: "5",
         v3: "9",
         v4: "10",
         jo: "3"
@@ -81,23 +80,20 @@ kerdesek = [
     }
 ];
 
-var s=""
-var index=0
+var s = ""
+var index = 0
 
-var kerdesek=() =>
-{
-   s=""
-   s+="<h1>"+kerdesek[index].k+"</h1><br>"
-   s+='<input type="valaszok" id="k1" name="valasz" value="1"><label for="k1">'+kerdesek[index].v1+'</label><br><input type="valaszok" id="k2" name="valasz" value="2"><label for="k2">'+kerdesek[index].v2+'</label><br><input type="valaszok" id="k3" name="valasz" value="3"><label for="k3">'+kerdesek[index].v3+'</label><input type="valaszok" id="k4" name="valasz" value="4"><label for="k4">'+kerdesek[index].v4+'</label>'
-   if(index>=kerdesek.length)
-        {
-            index++
-        }
-    document.getElementById("kerdesek").innerHTML=s
+var kerdesek = () => {
+    s = ""
+    s += "<h1>" + kerdes[index].k + "</h1><br>"
+    s += '<input type="radio" id="k1" name="valasz" value="1"><label for="k1">' + kerdes[index].v1 + '</label><br><input type="radio" id="k2" name="valasz" value="2"><label for="k2">' + kerdes[index].v2 + '</label><br><input type="radio" id="k3" name="valasz" value="3"><label for="k3">' + kerdes[index].v3 + '</label><br><input type="radio" id="k4" name="valasz" value="4"><label for="k4">' + kerdes[index].v4 + '</label>'
+    if (index >= kerdes.length) {
+        index++
+    }
+    document.getElementById("kerdesek").innerHTML = s
 }
 
-var betoltes=() =>
-{
+var betoltes = () => {
     shuffleArray(kerdesek)
     kerdesek()
 }
