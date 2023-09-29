@@ -82,20 +82,13 @@ kerdes = [{
 
 var s = ""
 var index = 0
+var jovalasz=0
 
 var kerdesek = () => {
     s = ""
     s += "<h1>" + kerdes[index].k + "</h1><br>"
     s += '<input type="radio" id="k1" name="valasz" value="1"><label for="k1">' + kerdes[index].v1 + '</label><br><input type="radio" id="k2" name="valasz" value="2"><label for="k2">' + kerdes[index].v2 + '</label><br><input type="radio" id="k3" name="valasz" value="3"><label for="k3">' + kerdes[index].v3 + '</label><br><input type="radio" id="k4" name="valasz" value="4"><label for="k4">' + kerdes[index].v4 + '</label>'
-    if (index >= kerdes.length) {
-        index++
-    }
     document.getElementById("kerdesek").innerHTML = s
-}
-
-var betoltes = () => {
-    shuffleArray(kerdesek)
-    kerdesek()
 }
 
 function shuffleArray(array) {
@@ -103,4 +96,21 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+var betoltes = () => {
+    shuffleArray(kerdes)
+    kerdesek()
+}
+
+var gomb=() =>{
+    if(document.getElementById("k"+kerdes[index].jo).checked)
+    {
+        jovalasz++
+    }
+
+    if (index < kerdes.length) {
+        index++
+    }
+    kerdesek()
 }
